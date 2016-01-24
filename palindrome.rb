@@ -1,13 +1,13 @@
-def biggest_palindrome(limit)
-  biggest_palindrome = 0
+def biggest_prime_palindrome(limit)
+  biggest_prime_palindrome = 0
 
   (1..limit).each do |num|
     if is_palindrome?(num) && is_prime?(num)
-      biggest_palindrome = num
+      biggest_prime_palindrome = num
     end
   end
 
-  biggest_palindrome
+  biggest_prime_palindrome
 end
 
 def is_palindrome?(number)
@@ -15,7 +15,7 @@ def is_palindrome?(number)
 end
 
 def is_prime?(number)
-  return false if number == 1
+  return false if number <= 1
   return true if number == 2
   return false if number.even?
 
@@ -26,4 +26,4 @@ def is_prime?(number)
   return true
 end
 
-puts biggest_palindrome(10000)
+puts biggest_prime_palindrome(10000)
